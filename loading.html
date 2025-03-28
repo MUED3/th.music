@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>กำลังโหลด | Khon Kaen University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Color Palette */
+            --color-background-primary: #f0f4f8;
+            --color-background-secondary: #ffffff;
+            --color-primary: #3498db;
+            --color-primary-hover: #2980b9;
+            --color-secondary: #6b7280;
+            --color-text-dark: #1f2937;
+            --color-text-light: #4b5563;
+
+            /* Typography */
+            --font-primary: 'Sarabun', Arial, sans-serif;
+
+            /* Spacing */
+            --spacing-xs: 0.625rem;
+            --spacing-sm: 0.875rem;
+            --spacing-md: 1.25rem;
+            --spacing-lg: 2rem;
+
+            /* Border Radius */
+            --border-radius-sm: 0.5rem;
+            --border-radius-md: 0.75rem;
+            --border-radius-lg: 1rem;
+
+            /* Shadows */
+            --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to top, #031974d9, #1934a780),
+                url('https://scontent.fnak4-1.fna.fbcdn.net/v/t39.30808-6/470245549_555054800667733_3915410271396778456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_ohc=4BAOmpBDrJUQ7kNvgG2kaUH&_nc_oc=AdlGBITJJTcRoE5d6j9PnEtDxcA0xAxgdST1mjARqilE9RzWVgEANItg9hZwcfdHC6nQ7sCnCGk9I0sPU6vWXMZg&_nc_zt=23&_nc_ht=scontent.fnak4-1.fna&_nc_gid=5dglCXZorPcCEc7p2x3tFA&oh=00_AYHBsspPSpCYaeDyiF_tSFSzk0XpAdYZIks7fFY1rB98pw&oe=67ECE5BB');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            max-width: 400px;
+            width: 90%;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .university-logo {
+            max-width: 120px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: var(--spacing-md) 0;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-top: 6px solid white;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-message {
+            margin-top: var(--spacing-md);
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .loading-subtext {
+            margin-top: var(--spacing-sm);
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .loading-text-animate {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-container">
+        <img src="https://school-dv.kku.ac.th/static/media/kku_logo_formal.45b2c2bb15f325eceef6.png"
+            alt="Khon Kaen University Logo" class="university-logo">
+
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="loading-message loading-text-animate">
+            กำลังโหลดข้อมูล...
+        </div>
+
+        <div class="loading-subtext">
+            กรุณารอสักครู่ ระบบกำลังเตรียมข้อมูดของคุณ
+        </div>
+    </div>
+
+    <script>
+        // Optional: Auto-redirect after certain time or on data load
+        window.addEventListener('load', () => {
+            // Simulate loading time
+            setTimeout(() => {
+                // Replace with actual redirect logic
+                window.location.href = 'welcome.html';
+            }, 3000);
+        });
+
+        // Dynamic loading messages
+        const loadingMessage = document.querySelector('.loading-message');
+        const messages = [
+            'กำลังโหลดข้อมูล...',
+            'เตรียมระบบ...',
+            'กำลังตรวจสอบความปลอดภัย...',
+            'เข้าสู่ระบบ...'
+        ];
+
+        let messageIndex = 0;
+        setInterval(() => {
+            messageIndex = (messageIndex + 1) % messages.length;
+            loadingMessage.textContent = messages[messageIndex];
+        }, 2000);
+    </script>
+</body>
+
+</html>
