@@ -97,7 +97,7 @@
             font-size: 1.1em;
             font-weight: bold;
             color: white;
-        }  
+        }
 
         .user-section {
             position: relative;
@@ -446,7 +446,8 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-logo">
-            <a href="index.html"><img src="KKU monogram Logo.svg" height="60" style="margin-top: 10px;" alt="University Logo"></a>
+            <a href="index.html"><img src="KKU monogram Logo.svg" height="60" style="margin-top: 10px;"
+                    alt="University Logo"></a>
             <span>Thai Classical Music</span>
         </div>
 
@@ -545,7 +546,7 @@
                 login: 'login.html',
                 dashboard: 'welcome.html'
             },
-            sessionTimeout: 1 * 60 * 60 * 1000 // 1 hours
+            sessionTimeout: 8 * 60 * 60 * 1000 // 8 hours
         };
 
         // Authentication Manager
@@ -652,12 +653,19 @@
                 const elements = {
                     name: document.getElementById('user-name'),
                     greeting: document.getElementById('student-greeting'),
-                    faculty: document.getElementById('student-faculty')
+                    faculty: document.getElementById('student-faculty'),
+                    avatar: document.querySelector('.user-avatar')
                 };
 
                 elements.name.textContent = session.name;
                 elements.faculty.textContent = session.faculty;
                 elements.greeting.textContent = `ยินดีต้อนรับ ${session.name}`;
+
+                if (session.photoUrl) {
+                    elements.avatar.src = session.photoUrl;
+                } else {
+                    elements.avatar.src = "assets/default-avatar.png"; // Default fallback
+                }
             }
 
             // Setup navigation event listeners
