@@ -454,7 +454,6 @@
         <div class="user-section">
             <div class="user-dropdown">
                 <div class="user-info">
-                    <img src="assets/default-avatar.png" alt="User Avatar" class="user-avatar">
                     <span id="user-name" class="user-name">Student Name</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
@@ -654,18 +653,11 @@
                     name: document.getElementById('user-name'),
                     greeting: document.getElementById('student-greeting'),
                     faculty: document.getElementById('student-faculty'),
-                    avatar: document.querySelector('.user-avatar')
                 };
 
                 elements.name.textContent = session.name;
                 elements.faculty.textContent = session.faculty;
                 elements.greeting.textContent = `ยินดีต้อนรับ ${session.name}`;
-
-                if (session.photoUrl) {
-                    elements.avatar.src = session.photoUrl;
-                } else {
-                    elements.avatar.src = "assets/default-avatar.png"; // Default fallback
-                }
             }
 
             // Setup navigation event listeners
