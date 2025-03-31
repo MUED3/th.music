@@ -433,7 +433,74 @@
             background-image: linear-gradient(to right, rgba(0, 5, 101, 0), var(--color-primary), rgba(0, 5, 101, 0));
         }
 
-        /* Screen Responsiveness */
+        /* Social Login Buttons */
+        .social-login {
+            margin-top: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .social-login-divider {
+            display: flex;
+            align-items: center;
+            margin: var(--spacing-md) 0;
+            color: var(--color-background-secondary);
+        }
+
+        .social-login-divider::before,
+        .social-login-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .social-login-divider span {
+            padding: 0 var(--spacing-sm);
+            font-size: 0.875rem;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-xs);
+            border-radius: 0.4rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .social-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-button i {
+            margin-right: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .google-login {
+            background-color: rgba(234, 67, 53, 0.1);
+        }
+
+        .google-login:hover {
+            background-color: rgba(234, 67, 53, 0.2);
+        }
+
+        .microsoft-login {
+            background-color: rgba(0, 120, 215, 0.1);
+        }
+
+        .microsoft-login:hover {
+            background-color: rgba(0, 120, 215, 0.2);
+        }
+
+        /* Screen Responsiveness - Enhanced */
         @media screen and (max-width: 480px) {
             .login-container {
                 width: 95%;
@@ -447,6 +514,120 @@
 
             .loading-spinner__text {
                 font-size: 0.8rem;
+            }
+
+            .login-title {
+                font-size: 1.6rem;
+            }
+
+            .login-subtitle {
+                font-size: 0.8rem;
+            }
+
+            .login-form input {
+                font-size: 0.9rem;
+                padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) 2.2rem;
+            }
+
+            .form-group i {
+                left: 12px;
+                top: 40px;
+                font-size: 0.9rem;
+            }
+
+            .form-label {
+                margin-left: 2rem;
+                font-size: 0.8rem;
+            }
+
+            .login-form button {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
+            .footer {
+                font-size: 0.75rem;
+            }
+
+            .loading-container {
+                padding: var(--spacing-md);
+            }
+
+            .university-logo {
+                max-width: 90px;
+            }
+
+            .loading-message {
+                font-size: 0.9rem;
+            }
+
+            .loading-subtext {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Small phone screens */
+        @media screen and (max-width: 360px) {
+            .login-container {
+                padding: var(--spacing-sm);
+            }
+
+            .login-title {
+                font-size: 1.4rem;
+            }
+
+            .login-logo {
+                max-width: 4rem;
+            }
+
+            .social-button {
+                font-size: 0.8rem;
+            }
+
+            .social-button i {
+                font-size: 1rem;
+            }
+
+            .loading-spinner {
+                margin: var(--spacing-sm) 0;
+            }
+
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border-width: 5px;
+            }
+        }
+
+        /* Landscape orientation for mobile */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .login-container {
+                padding: var(--spacing-sm);
+                max-width: 90%;
+            }
+
+            .login-branding {
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .login-logo {
+                max-width: 3.5rem;
+            }
+
+            .login-title {
+                margin-bottom: 0.4rem;
+            }
+
+            .login-form {
+                gap: var(--spacing-sm);
+            }
+
+            .login-form input {
+                margin-bottom: var(--spacing-sm);
             }
         }
 
@@ -717,7 +898,18 @@
                     status: "10",
                     instrument: "จะเข้"
                 },
-                '683050219-5': {
+                '683050215-3': {
+                    name: 'นายจตุรภัทร สมดา',
+                    department: 'Music Education',
+                    email: 'jatuphat.s@kkumail.com',
+                    password: 'MUSIC215-3',
+                    role: 'student',
+                    faculty: 'คณะศึกษาศาสตร์',
+                    program: "ED-Music",
+                    status: "10",
+                    instrument: ""
+                },
+                "683050219-5": {
                     name: "นายจีรวุฒิ โสพิลา",
                     department: "Music Education",
                     email: "683050219-5@kkumail.com",
@@ -728,7 +920,7 @@
                     status: "10",
                     instrument: "ขิม"
                 },
-                '683050222-6': {
+                "683050222-6": {
                     name: "นายญาณกร แสงชาติ",
                     department: "Music Education",
                     email: "683050222-6@kkumail.com",
@@ -739,7 +931,7 @@
                     status: "10",
                     instrument: "ขิม"
                 },
-                '683050225-0': {
+                "683050225-0": {
                     name: "นายดลชนก สำเภาเงิน",
                     department: "Music Education",
                     email: "683050225-0@kkumail.com",
@@ -750,7 +942,7 @@
                     status: "10",
                     instrument: "ระนาดทุ้ม"
                 },
-                '683050226-8': {
+                "683050226-8": {
                     name: "นางสาวทัศนีย์ ชุบขุนทด",
                     department: "Music Education",
                     email: "683050226-8@kkumail.com",
@@ -761,7 +953,7 @@
                     status: "10",
                     instrument: "ฆ้องวงใหญ่"
                 },
-                '683050228-4': {
+                "683050228-4": {
                     name: "นายธนากร ขันแข็ง",
                     department: "Music Education",
                     email: "683050228-4@kkumail.com",
@@ -772,7 +964,7 @@
                     status: "10",
                     instrument: "ฆ้องวงเล็ก"
                 },
-                '683050231-5': {
+                "683050231-5": {
                     name: "นายวัชรพล หมื่นศรี",
                     department: "Music Education",
                     email: "683050231-5@kkumail.com",
@@ -783,7 +975,7 @@
                     status: "10",
                     instrument: "ระนาดเอก"
                 },
-                '683220048-0': {
+                "683220048-0": {
                     name: "นางสาวจุฑามาศ ศรีคำ",
                     department: "Thai Music",
                     email: "chuthamat.sri@kkumail.com",
@@ -794,7 +986,7 @@
                     status: "10",
                     instrument: "ขับร้อง"
                 },
-                '683220049-8': {
+                "683220049-8": {
                     name: "นายบัณฑิต สินนอก",
                     department: "Thai Music",
                     email: "683220049-8@kkumail.com",
@@ -805,7 +997,7 @@
                     status: "10",
                     instrument: ""
                 },
-                '683220050-3': {
+                "683220050-3": {
                     name: "นายนวดล แสงงาม",
                     department: "Thai Music",
                     email: "683220050-3@kkumail.com",
@@ -816,7 +1008,7 @@
                     status: "10",
                     instrument: ""
                 },
-                '683220051-1': {
+                "683220051-1": {
                     name: "นายพิทยุฒ์ ศิริเกตุ",
                     department: "Thai Music",
                     email: "683220051-1@kkumail.com",
@@ -827,7 +1019,7 @@
                     status: "10",
                     instrument: "ฆ้องวงใหญ่"
                 },
-                '683220052-9': {
+                "683220052-9": {
                     name: "นางสาวพิมพ์ชนก มิ่งภูษา",
                     department: "Thai Music",
                     email: "683220052-9@kkumail.com",
@@ -838,7 +1030,7 @@
                     status: "10",
                     instrument: "ฆ้องวงใหญ่"
                 },
-                '683220053-7': {
+                "683220053-7": {
                     name: "นางสาวรักษิณาภรณ์ แก้วสาธร",
                     department: "Thai Music",
                     email: "683220053-7@kkumail.com",
@@ -849,7 +1041,7 @@
                     status: "10",
                     instrument: ""
                 },
-                '683220054-5': {
+                "683220054-5": {
                     name: "นางสาวสุชัญญา เซมรัมย์",
                     department: "Thai Music",
                     email: "683220054-5@kkumail.com",
@@ -860,24 +1052,20 @@
                     status: "10",
                     instrument: "ฆ้องวงเล็ก"
                 },
-                'admin': {
+                "admin": {
                     name: "ผู้ดูแลระบบ",
                     department: "IT Department",
                     email: "admin",
                     password: "admin123",
-                    role: "admin",
-                    faculty: "",
-                    program: "",
-                    status: "",
-                    instrument: ""
+                    role: "admin"
                 }
-            }
+            };
 
             static getUser(id) {
                 return this.users[id.trim()] || null;
             }
         }
-
+        
         // Login manager class
         class LoginManager {
             constructor() {
